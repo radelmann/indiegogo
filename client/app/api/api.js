@@ -1,4 +1,4 @@
-angular.module('twitterAPI.tweets', [])
+angular.module('indiegogo.api', [])
   .controller('apiController', function($scope, API) {
     $scope.data = {};
     $scope.data.items = [];

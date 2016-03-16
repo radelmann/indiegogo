@@ -8,7 +8,7 @@ angular.module('indiegogo.services', [])
         url: '/api/get/'
       })
       .then(function(resp) {
-        return JSON.parse(resp.data);
+        return JSON.parse(resp.data).response;
       }, function(err) {
         return [];
       });

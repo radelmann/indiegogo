@@ -1,9 +1,23 @@
 <div class='container' ng-model='indiegogo.api' >
   <div class="row">
-  
+      
+      <form class="form-inline" name='filterForm'>
+        
+        <label>Title Search:</label>
+        <input class="form-control" id='titleFilter' type="text"
+        ng-model="queryTitle"
+        placeholder="search by title here">
+
+        <label>Tagline Search:</label>
+        <input class="form-control" id='titleFilter' type="text"
+        ng-model="queryTagline"
+        placeholder="search by tagline here">
+        
+      </form>
+
       <div class="items">
         
-        <div class="clearfix item" ng-repeat='item in data.items'>
+        <div class="clearfix item" ng-repeat='item in data.items | filter: { title: queryTitle, tagline: queryTagline  }'>
           <img class="pull-left" src="{{ item.baseball_card_image_url}}">
           <span>{{ item.title }}</span><br>
           <span>{{ item.tagline }}</span><br>

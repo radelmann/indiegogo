@@ -3,8 +3,11 @@
   
       <div class="items">
         
-        <div class="item" ng-repeat='item in data.items'>
-          <span>{{ item.title }}</span>
+        <div class="clearfix item" ng-repeat='item in data.items'>
+          <img class="pull-left" src="{{ item.baseball_card_image_url}}">
+          <span>{{ item.title }}</span><br>
+          <span>{{ item.tagline }}</span><br>
+          <a href="{{ item.web_url}}" target="_blank">Click here for more info</a><br>
         </div>
 
       </div>

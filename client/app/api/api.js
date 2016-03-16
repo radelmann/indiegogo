@@ -4,6 +4,7 @@ angular.module('indiegogo.api', [])
     $scope.data.items = [];
 
     API.get().then(function(data) {
+      console.dir(data);
       $scope.data.items = data;
     });
   });

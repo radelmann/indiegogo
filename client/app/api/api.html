@@ -2,18 +2,13 @@
   <div class="row">
     
     <form class="form-inline" name='filterForm'>
-      <label>Title Search:</label>
-      <input class="form-control" id='titleFilter' type="text"
-      ng-model="queryTitle"
-      placeholder="search by title here">
-      <label>Tagline Search:</label>
-      <input class="form-control" id='taglineFilter' type="text"
-      ng-model="queryTagline"
-      placeholder="search by tagline here">
+      <input class="form-control" id='txtFilter' type="text"
+      ng-model="query"
+      placeholder="search by title or tagline here">
     </form>
     
     <div class="items">      
-        <div class="clearfix item" ng-repeat='item in data.items | filter: { title: queryTitle, tagline: queryTagline  }'>
+        <div class="clearfix item" ng-repeat='item in data.items | filter: query'>
 
           <a href="{{ item.web_url}}" target="_blank">
             <img class="pull-left"src="{{item.baseball_card_image_url}}">

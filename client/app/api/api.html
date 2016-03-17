@@ -1,31 +1,37 @@
 <div class='container' ng-model='indiegogo.api' >
   <div class="row">
+    
+    <form class="form-inline" name='filterForm'>
       
-      <form class="form-inline" name='filterForm'>
-        
-        <label>Title Search:</label>
-        <input class="form-control" id='titleFilter' type="text"
-        ng-model="queryTitle"
-        placeholder="search by title here">
-
-        <label>Tagline Search:</label>
-        <input class="form-control" id='taglineFilter' type="text"
-        ng-model="queryTagline"
-        placeholder="search by tagline here">
-        
-      </form>
-
-      <div class="items">
-        
+      <label>Title Search:</label>
+      <input class="form-control" id='titleFilter' type="text"
+      ng-model="queryTitle"
+      placeholder="search by title here">
+      <label>Tagline Search:</label>
+      <input class="form-control" id='taglineFilter' type="text"
+      ng-model="queryTagline"
+      placeholder="search by tagline here">
+      
+    </form>
+    
+    <div class="items">
+                
         <div class="clearfix item" ng-repeat='item in data.items | filter: { title: queryTitle, tagline: queryTagline  }'>
-          <img class="pull-left" src="{{ item.baseball_card_image_url}}">
-          <span>{{ item.title }}</span><br>
+
+          <a href="{{ item.web_url}}" target="_blank">
+            <img class="pull-left"src="{{item.baseball_card_image_url}}">
+          </a>
+          
+          <h3>{{ item.title }}</h3>
+          
           <span>{{ item.tagline }}</span><br>
-          <a href="{{ item.web_url}}" target="_blank">Click here for more info</a><br>
+          
+          <strong><a href="{{ item.web_url}}" target="_blank">Click here for more info</a></strong>
+
         </div>
 
-      </div>
-      
     </div>
+    
   </div>
+</div>
 </div>
